@@ -1,0 +1,620 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0807;
+    color: #f5ead7;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: #c89b5c;
+    color: #120d09;
+}
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #090605;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-heart {
+    font-size: 45px;
+    color: #d4a45f;
+    animation: heartbeat 1.3s infinite;
+}
+
+#loader p {
+    margin-top: 15px;
+    font-family: "Dancing Script", cursive;
+    font-size: 24px;
+    color: #d8c2a0;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+.music-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 1000;
+    padding: 11px 18px;
+    border: 1px solid rgba(220, 180, 110, 0.5);
+    border-radius: 30px;
+    background: rgba(20, 13, 10, 0.7);
+    color: #e4c38d;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    background: rgba(200, 155, 92, 0.2);
+    transform: translateY(-2px);
+}
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    background-image: url("images/banaras-dev-deepawali.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay,
+.travel-overlay,
+.final-overlay,
+.quote-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(5, 3, 2, 0.4),
+        rgba(5, 3, 2, 0.72)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+}
+
+.small-title {
+    font-family: "Dancing Script", cursive;
+    color: #e2bc7b;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 8vw, 105px);
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -2px;
+}
+
+.gold-line {
+    width: 90px;
+    height: 1px;
+    background: #d2a461;
+    margin: 30px auto;
+}
+
+.anniversary {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    letter-spacing: 4px;
+    color: #e6c994;
+}
+
+.date {
+    margin-top: 12px;
+    letter-spacing: 5px;
+    font-size: 13px;
+    color: #cbb99e;
+}
+
+.scroll {
+    margin-top: 75px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #d1c2ac;
+}
+
+.scroll div {
+    font-size: 25px;
+    margin-top: 8px;
+    animation: scrollDown 1.5s infinite;
+}
+
+@keyframes scrollDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+.section {
+    padding: 130px 25px;
+}
+
+.container {
+    width: min(1000px, 100%);
+    margin: auto;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #bd9256;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    text-align: center;
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.15;
+}
+
+.intro {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(126, 78, 37, 0.2), transparent 45%),
+        #0b0807;
+    text-align: center;
+}
+
+.story-text {
+    max-width: 760px;
+    margin: 25px auto;
+    line-height: 2;
+    color: #cdbfa9;
+    font-size: 17px;
+}
+
+.highlight {
+    color: #e4d3b6;
+}
+
+.quote-section {
+    height: 80vh;
+    min-height: 550px;
+    position: relative;
+    background-image: url("images/memory1.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quote-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    padding: 30px;
+}
+
+.quote-mark {
+    font-family: "Playfair Display", serif;
+    color: #d2a461;
+    font-size: 100px;
+    height: 70px;
+}
+
+.quote-content h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    font-style: italic;
+}
+
+.quote-content p {
+    margin-top: 25px;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    color: #d7b77c;
+}
+
+.travel-section {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banaras {
+    background-image: url("images/banaras-dev-deepawali.jpg");
+}
+
+.jaisalmer {
+    background-image: url("images/jaisalmer.jpg");
+}
+
+.travel-content {
+    position: relative;
+    z-index: 2;
+    width: min(850px, 90%);
+}
+
+.travel-content p:not(.section-label) {
+    font-size: 18px;
+    line-height: 2;
+    color: #eadbc2;
+    margin: 20px auto;
+    max-width: 720px;
+}
+
+.letter-section {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(126, 78, 37, 0.15), transparent 30%),
+        #100b08;
+}
+
+.letter {
+    margin: 70px auto 0;
+    max-width: 800px;
+    background: #e9dcc5;
+    color: #33251b;
+    padding: clamp(35px, 7vw, 80px);
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    transform: rotate(-0.5deg);
+}
+
+.letter::before {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border: 1px solid rgba(80, 55, 35, 0.25);
+    pointer-events: none;
+}
+
+.letter p {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 22px;
+}
+
+.letter-greeting {
+    font-family: "Dancing Script", cursive !important;
+    font-size: 36px !important;
+}
+
+.letter-ending {
+    color: #8b5a32;
+    font-weight: bold;
+}
+
+.signature {
+    margin-top: 45px;
+    text-align: right;
+}
+
+.signature span {
+    font-family: "Dancing Script", cursive;
+    font-size: 35px;
+    color: #8b5a32;
+}
+
+.timeline-section {
+    background: #0b0807;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 80px auto 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #80603a;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 60px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #d2a461;
+    box-shadow: 0 0 20px rgba(210,164,97,0.6);
+}
+
+.timeline-card span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #bd9256;
+}
+
+.timeline-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.timeline-card p {
+    color: #bfb1a0;
+    line-height: 1.8;
+}
+
+.gallery-section {
+    background: #0d0907;
+}
+
+.gallery {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease, filter 0.7s ease;
+    filter: brightness(0.8);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(1);
+}
+
+.special-section {
+    min-height: 70vh;
+    position: relative;
+    background: #070506;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.special-content {
+    position: relative;
+    z-index: 2;
+}
+
+.special-content > p:first-child {
+    letter-spacing: 5px;
+    color: #bd9256;
+    font-size: 11px;
+}
+
+.special-content h2 {
+    margin: 20px 0;
+}
+
+.couple {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    color: #e1c28c;
+}
+
+.couple span,
+.nicknames span {
+    color: #aa7542;
+    padding: 0 12px;
+}
+
+.nicknames {
+    margin-top: 15px;
+    font-family: "Dancing Script", cursive;
+    font-size: 32px;
+    color: #d4b783;
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px);
+    background-size: 120px 120px;
+    opacity: 0.25;
+    animation: starsMove 20s linear infinite;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-120px);
+    }
+}
+
+.final-section {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    background-image: url("images/jaisalmer.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.final-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 30px;
+}
+
+.final-content > p:first-child {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(20px, 3vw, 30px);
+    line-height: 1.7;
+}
+
+.final-content h2 {
+    margin: 20px 0;
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(55px, 8vw, 100px);
+    color: #e4c48b;
+}
+
+.final-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.final-signature {
+    margin-top: 30px;
+    font-family: "Dancing Script", cursive;
+    font-size: 32px !important;
+    color: #e0bd7b;
+}
+
+.final-content small {
+    display: block;
+    margin-top: 20px;
+    letter-spacing: 5px;
+    color: #d0bea2;
+}
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 5000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+#lightbox.active {
+    display: flex;
+}
+
+#lightboxImage {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+#closeLightbox {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .small-title {
+        font-size: 28px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .music-btn {
+        top: 15px;
+        right: 15px;
+        font-size: 11px;
+    }
+
+    .section {
+        padding: 90px 20px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .travel-section {
+        min-height: 750px;
+    }
+
+    .letter {
+        padding: 35px 25px;
+    }
+
+    .letter p {
+        font-size: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 55px;
+    }
+}
